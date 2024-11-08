@@ -18,7 +18,8 @@ provides faster parsing and serialization due to low-level optimizations
 You are able to switch between the 2 installed parsers, by selecting a different CMake build [[3]](https://learn.microsoft.com/en-us/cpp/build/customize-cmake-settings?view=msvc-170).
 
 In these 2 different builds that I have created, I add a variable in the "CMake variables and cache" section, 
-which sets '*JSON_LIBRARY*' to the specific value that it needs to be for that parser. ("nlohmann" or "rapidjson").
+which sets '*JSON_LIBRARY*' to the specific value, "nlohmann" or "rapidjson", that it needs to be for that parser. Since Nlohmann is set as the default 
+option, this was only required to be done for the RapidJson build.
 
 When running the program with one of these configurations selected, it will automatically use the specified value of 
 '*JSON_LIBRARY*' for that configuration. In my **CMakeLists** file, based on this value, CMake will fetch [[4]](https://cmake.org/cmake/help/latest/module/FetchContent.html) 
